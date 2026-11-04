@@ -41,18 +41,21 @@ export function RestaurantDetail() {
           retrying={restaurant.isFetching}
         />
       ) : (
-        <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs">
           <RestaurantPhoto
             url={restaurant.data.photo_url}
             name={restaurant.data.name}
+            category={restaurant.data.category}
             className="h-48 w-full sm:h-64"
           />
-          <div className="flex items-start justify-between gap-3 p-4">
-            <div className="space-y-1">
+          <div className="flex flex-wrap items-start justify-between gap-3 p-5">
+            <div className="space-y-1.5">
+              <span className="inline-block rounded-full bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-900">
+                {restaurant.data.category}
+              </span>
               <h1 className="text-2xl font-bold">{restaurant.data.name}</h1>
-              <p className="text-sm text-slate-700">{restaurant.data.category}</p>
               <p className="flex items-center gap-1 text-sm text-slate-700">
-                <MapPin className="h-4 w-4" aria-hidden="true" /> {restaurant.data.address}
+                <MapPin className="h-4 w-4 text-amber-700" aria-hidden="true" /> {restaurant.data.address}
               </p>
               {reviews.isSuccess && (
                 <p className="flex flex-wrap items-center gap-2 pt-1 text-sm">
@@ -73,7 +76,7 @@ export function RestaurantDetail() {
 
       <section aria-labelledby="reviews-title" className="space-y-3">
         <h2 id="reviews-title" className="text-xl font-semibold">
-          Reseñas
+          Reseñas ({reviews.data?.length ?? 0})
         </h2>
         {reviews.isPending ? (
           <ReviewListSkeleton />
@@ -88,4 +91,3 @@ export function RestaurantDetail() {
     </div>
   )
 }
-

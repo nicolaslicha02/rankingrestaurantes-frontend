@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { Heart, LogOut, Star } from 'lucide-react'
+import { Heart, LogOut, Sparkles, UtensilsCrossed } from 'lucide-react'
 import { useAuth } from '../auth/useAuth'
 import { useState } from 'react'
 import { useToast } from './useToast'
@@ -29,11 +29,21 @@ export function Layout() {
       >
         Saltar al contenido
       </a>
-      <header className="border-b border-slate-200 bg-white">
+      <header className="border-b border-amber-200/80 bg-white shadow-xs">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-3">
-          <Link to="/" className="flex items-center gap-2 text-lg font-bold text-amber-800">
-            <Star className="h-5 w-5 fill-amber-500 text-amber-500" aria-hidden="true" />
-            Ranking de Restaurantes
+          <Link to="/" className="flex items-center gap-2.5">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-700 text-white shadow-xs">
+              <UtensilsCrossed className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <div>
+              <span className="flex items-center gap-1.5 text-lg font-extrabold tracking-tight text-slate-900">
+                Petite Critique
+                <Sparkles className="h-4 w-4 text-amber-600" aria-hidden="true" />
+              </span>
+              <span className="block text-[11px] font-medium text-slate-500">
+                Guía gastronómica & ranking de reseñas
+              </span>
+            </div>
           </Link>
           <nav aria-label="Principal" className="flex flex-wrap items-center gap-1">
             <NavLink to="/" end className={linkClass}>
@@ -46,7 +56,7 @@ export function Layout() {
                     <Heart className="h-4 w-4" aria-hidden="true" /> Favoritos
                   </span>
                 </NavLink>
-                <span className="px-2 text-sm text-slate-700">Hola, {user?.name}</span>
+                <span className="px-2 text-sm font-medium text-slate-700">Hola, {user?.name}</span>
                 <button
                   type="button"
                   onClick={onLogout}
@@ -75,10 +85,9 @@ export function Layout() {
       <main id="contenido" className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
         <Outlet />
       </main>
-      <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-600">
-        TP2 Programación IV · UTN FRLP
+      <footer className="border-t border-slate-200 bg-white py-4 text-center text-xs text-slate-600">
+        <strong>Petite Critique</strong> · TP2 Programación IV · UTN FRLP
       </footer>
     </div>
   )
 }
-

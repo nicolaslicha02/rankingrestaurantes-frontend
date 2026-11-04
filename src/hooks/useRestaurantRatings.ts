@@ -1,11 +1,12 @@
 import { useQueries } from '@tanstack/react-query'
 import { getReviews } from '../api/reviews'
 import { summarizeReviews, type RatingSummary } from '../lib/ratings'
-import type { Restaurant } from '../types/api'
+import type { Restaurant, Review } from '../types/api'
 
 export interface RatingEntry extends RatingSummary {
   isLoading: boolean
   isError: boolean
+  reviews: Review[]
 }
 
 /**
@@ -26,13 +27,14 @@ export function useRestaurantRatings(restaurants: Restaurant[]): Map<number, Rat
   const map = new Map<number, RatingEntry>()
   restaurants.forEach((r, i) => {
     const result = results[i]
-    const summary = summarizeReviews(result?.data ?? [])
+    const reviews = result?.data ?? []
+    const summary = summarizeReviews(reviews)
     map.set(r.id, {
       ...summary,
+      reviews,
       isLoading: result?.isPending ?? true,
       isError: result?.isError ?? false,
     })
   })
   return map
 }
-
