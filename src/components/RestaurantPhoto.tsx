@@ -25,7 +25,7 @@ const RESTAURANT_PHOTOS: Record<string, string> = {
   'Bronx Burger Joint': 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
   'El Rey del Pancho': 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=800&q=80',
   'Pancho Villa Gourmet': 'https://images.unsplash.com/photo-1541214113241-21578d2d9b62?auto=format&fit=crop&w=800&q=80',
-  'Super Pancho 74': 'https://images.unsplash.com/photo-1627054234097-0b15d1f3006d?auto=format&fit=crop&w=800&q=80',
+  'Super Pancho 74': 'https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=800&q=80',
   'Gran Palacio Libre': 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
   'El Banquete Sin Fin': 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
   'Lo de Nono Bodegón': 'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=800&q=80',
