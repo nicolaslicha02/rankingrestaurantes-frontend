@@ -23,3 +23,4 @@ describe('CriticPassWheel', () => {
     expect(await screen.findByRole('dialog', { name: /Ruleta Gourmet de Petite Critique/i })).toBeInTheDocument()
   })
 })
+
