@@ -67,10 +67,11 @@ bin/brakeman --no-pager     # análisis estático de seguridad
 | Rol / Perfil | Email | Contraseña | Acceso y detalle |
 |---|---|---|---|
 | Administrador (`/admin`) | `admin@example.com` | `admin1234` | Back-office Rails (`http://localhost:3000/admin`) para gestionar categorías, restaurantes y fotos |
-| Usuario Demo | `usuario@example.com` | `usuario1234` | Front-end (`http://localhost:5173`). Arranca con 16 reseñas (1★ desbloqueada) y 4 favoritos |
-| Crítica Gourmet | `critico@example.com` | `critico1234` | Front-end. Arranca con **49 reseñas**: al publicar **1 reseña más** llega a 50, completa las **3 estrellas** y desbloquea la **Ruleta de Premios** |
+| Usuario común | `usuario@example.com` | `usuario1234` | Front-end (`http://localhost:5173`): reseñar, editar/eliminar reseñas propias y guardar favoritos |
 
 También es posible crear nuevos usuarios finales desde `/register` (`POST /api/v1/users`). Todas son credenciales de desarrollo/seeds locales, no cuentas reales. El front-end **nunca** maneja roles.
+
+> **Nota sobre los datos iniciales:** los seeds originales del back-end cargan 2 restaurantes (`Don Mario` y `La Estancia`), sin reseñas previas ni fotos adjuntas (el front-end muestra fotos representativas de respaldo si `photo_url` es `null`). Desde `/admin` pueden agregarse más locales, categorías y fotos; desde el front-end pueden cargarse reseñas y probar el **Pase Petite Critique** (incluye botones de demostración `1★ (15)`, `2★ (30)`, `3★ (50 ¡Ruleta!)` para validar la carga progresiva y la ruleta sin tener que escribir 50 reseñas manualmente).
 
 ## Documentación del contrato de la API (obligatoria en grupo)
 

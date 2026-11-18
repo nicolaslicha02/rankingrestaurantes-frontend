@@ -162,9 +162,7 @@ export function CriticPassWheel({
               </>
             ) : (
               <>
-                Progreso activo: <strong>{effectiveCount} / {GOAL} reseñas</strong>. Iniciá sesión con{' '}
-                <code className="rounded bg-white/80 px-1 py-0.5 font-mono text-xs">critico@example.com</code>{' '}
-                (49 reseñas) o usá los botones de prueba para ver cómo se cargan 1★, 2★ y 3★.
+                Progreso activo: <strong>{effectiveCount} / {GOAL} reseñas</strong>. Iniciá sesión para sumar tus reseñas reales o usá los botones de prueba para ver cómo se cargan 1★, 2★ y 3★.
               </>
             )}
           </p>
